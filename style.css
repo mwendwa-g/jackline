@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    font-family: "Quicksand", serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: #0cb8b6;
+}
+
+img{
+    width: 100%;
+}
+
+:root{
+    --blue: #0cb8b6;
+    --faint-blue: #1d2d5e;
+    --orange: rgb(245, 202, 14);
+}
+
+body{
+    background-color: whitesmoke;
+    overflow-x: hidden;
+}
+
+.btn{
+    border: none;
+    padding: 0.8rem 2rem;
+    background-color: var(--faint-blue);
+    color: #ffff;
+    border-radius: 2rem;
+    cursor: pointer;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.heading{
+    text-align: center;
+    color: #1d2d5e;
+    font-size: 3rem;
+    transition: .3s;
+}
+.heading span{
+    color: #0cb8b6;
+}
+
+section{
+    padding: 5.5rem 6rem;
+}
+
+header{
+    background-color: white;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 7px rgb(133, 132, 132);
+    padding: 1.2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.3s;
+    z-index: 30;
+}
+header.active{
+    top: -100%;
+}
+#menu{
+    font-size: 2rem;
+    color: #1d2d5e;
+    cursor: pointer;
+    display: none;
+}
+header .logo img{
+    height: 50px;
+}
+header .navs{
+    display: flex;
+}
+header .navs img{
+    display: none;
+}
+header .navs a{
+    margin: 0 1.2rem;
+    color: var(--faint-blue);
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    padding: 0.6rem 0;
+    font-weight: 600;
+    transition: .3s;
+}
+header .navs a:hover{
+    color: var(--blue);
+}
+header .navs a:hover span{
+    width: 90%;
+}
+header .navs a span{
+    position: absolute;
+    background: var(--orange);
+    height: 3px;
+    width: 0%;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    transition: .3s;
+    border-radius: 3rem;
+}
+
+/*home*/
+.home{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Black color with 50% opacity */
+    z-index: 1; /* Overlay sits on top of the background image */
+}
+.home h1{
+    font-size: 4rem;
+    line-height: 1.2;
+    z-index: 5;
+    color: var(--faint-blue);
+}
+.home h1 span{
+    color: var(--blue);
+}
+.home p{
+    margin-top: 1rem;
+    z-index: 5;
+    width: 80%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+}
+.home a{
+    margin-top: 1rem;
+    z-index: 5;
+}
+.home .experience{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 60%;
+    z-index: 5;
+    margin-top: 2.7rem;
+}
+.home .experience .one h1{
+    font-size: 2.7rem;
+}
+.home .experience .one h2{
+    font-size: 1.3rem;
+    color: #1d2d5e99;
+}
+
+/*sectio about*/
+.about .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+.about .container .image{
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.about .container .image img{
+    object-position: center;
+    object-fit: contain;
+}
+.about .container .content .heading{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+.about .container .content p{
+    text-align: right;
+}
+
+
+/*section join*/
+.join{
+    background: white;
+}
+.join .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    background-color: whitesmoke;
+    padding: 4rem;
+    border-radius: 3rem;
+    box-shadow: 0 0 10px rgb(241, 241, 241);
+}
+.join .container .text h1{
+    font-size: 2.6rem;
+    text-align: left;
+}
+.join .container .text p{
+    margin-top: 1rem;
+}
+.join .container .text .icons{
+    margin-top: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.join .container .text .icons ion-icon{
+    font-size: 3rem;
+    color: var(--faint-blue);
+    cursor: pointer;
+}
+.join .container form .inputs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.join .container form .inputs input{
+    border: none;
+    padding: 1rem;
+    border-radius: .3rem;
+}
+.join .container form h5{
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    color: var(--blue);
+}
+.join .container form .inputs:nth-child(2){
+    display: initial;
+}
+.join .container form button{
+    margin-top: 1.5rem;
+}
+
+/*section faqs*/
+.frequently{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Offsets the element to compensate for section padding */
+    margin-right: calc(-50vw + 50%);
+}
+.faqs .container{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.faqs .container .image .ask{
+    background: #1d2d5e;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+.faqs .container .image .ask .icon{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.faqs .container .image .ask .icon ion-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem;
+    background: #0cb8b6;
+    color: #1d2d5e;
+    border-radius: 50%;
+}
+.faqs .container .image .ask .icon p{
+    color: white;
+    font-size: 1.6rem;
+}
+.faqs .container .image .ask form{
+    margin-top: 0.8rem;
+}
+.faqs .container .image .ask form input{
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 2rem;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+.faqs .container .image .ask form textarea{
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: .5rem;
+    border: none;
+    padding: 1rem;
+}
+.faqs .container .image .ask button{
+    background: #0cb8b6;
+    color: white;
+}
+.faqs .container .quiz h1{
+    font-size: 2rem;
+    text-align: left;
+}
+.faqs .container .quiz p{
+    margin-top: 0.5rem;
+}
+.faqs .container .quiz .icon{
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+}
+.faqs .container .quiz .icon ion-icon{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: var(--faint-blue);
+    border-radius: 50%;
+    padding: .7rem;
+}
+.faqs .container .quiz .icon p{
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: #0cb8b6;
+}
+.faqs .container .quiz .questions{
+    margin-top: 1rem;
+}
+.faqs .container .quiz .questions .thee{
+    margin: 1rem 0;
+}
+.faqs .container .quiz .questions .thee .qwes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid burlywood;
+    cursor: pointer;
+}
+.faqs .container .quiz .questions .thee .qwes ion-icon.active{
+    transform: rotate(180deg);
+    transition: .2s;
+}
+.faqs .container .quiz .questions .thee .res{
+    display: none;
+    transition: .2s;
+}
+.faqs .container .quiz .questions .thee.active{
+    border-radius: 1rem;
+    overflow: hidden;
+    background: white;
+}
+.faqs .container .quiz .questions .thee.active .qwes{
+    background: var(--faint-blue);
+    color: white;
+    border-radius: 0;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border: none;
+}
+.faqs .container .quiz .questions .thee.active .res{
+    margin-top: 0.6rem;
+    padding: 1rem;
+    display: block;
+}
+
+/*blog section*/
+.blog .container .holder{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    height: 300px;
+    padding: 1rem;
+}
+.blog .container .holder .image{
+    width: 290px;
+    height: 290px;
+    overflow: hidden;
+}
+.blog .container .holder .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blog .container .holder .text h1{
+    font-size: 1.6rem;
+    text-align: left;
+}
+.blog .container .holder .text p{
+    padding: 0.3rem;
+    background: rgb(255, 255, 255);
+    color: #1d2d5e99;
+    margin-top: 1rem;
+    width: max-content;
+}
+.blog .container .holder .text h2{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    width: 60%;
+}
+.blog .container .holder .text a{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.4rem;
+}
+
+/*section contact*/
+.contact .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 2rem;
+}
+.contact .container .one{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.contact .container .one ion-icon{
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    color: white;
+    background: #1d2d5e;
+    border-radius: 50%;
+    transition: .2s;
+}
+.contact .container .one ion-icon:hover{
+    background: #0cb8b6;
+}
+.contact .container .one a{
+    margin-left: 1.5rem;
+}
+.contact .founders{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    border: 1px solid #0cb8b6;
+    padding: 0.5rem;
+    border-radius: .5rem;
+}
+.contact .founders .found{
+    height: 22vw;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.contact .founders .found img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.contact .founders .found .position{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d2d5ecb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+.contact .founders .found .position h1{
+    color: white;
+    font-size: 1rem;
+}
+.contact .founders .found:hover .position{
+    top: 0;
+}
+
+/*section footer*/
+.footer{
+    background: #1d2d5eec;
+}
+.footer .logo img{
+    width: 200px;
+}
+.footer .holder{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 1.3rem;
+}
+.footer .holder .cont{
+    display: flex;
+    flex-direction: column;
+}
+.footer .holder .cont h1{
+    color: white;
+    font-size: 1.5rem;
+}
+.footer .holder .cont a{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #0cb8b6;
+}
+
+
+/*breakpoints*/
+@media (max-width: 1350px) {
+    section{
+        padding: 5.5rem 4rem;
+    }
+    header{
+        padding: 1rem 4rem;
+    }
+    html{
+        font-size: 80%;
+    }
+    header .logo img{
+        height: 40px;
+    }
+    .faqs .container .image img{
+        display: none;
+    }
+}
+
+@media (max-width: 1180px){
+    .frequently{
+        height: 180px;
+    }
+    section{
+        padding: 4rem 2rem;
+    }
+    header{
+        padding: 1rem 1rem;
+    }
+    .btn{
+        padding: 0.7rem 1.3rem;
+        font-size: 1.2rem;
+    }
+    html{
+        font-size: 85%;
+    }
+
+    .about .container{
+        grid-template-columns: 1fr;
+    }
+    .about .container .image{
+        width: 40vw;
+        height:40vw;
+        border-radius: 50%;
+        margin: auto;
+    }
+    .about .container .content p{
+        text-align: left;
+    }
+}
+
+
+
+@media (max-width: 970px) {
+    #menu{
+        display: block;
+        border: none;
+        background: transparent;
+    }
+    .navs{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        bottom: 0;
+        width: min(400px, 90vw);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #ffffff;
+        z-index: 50;
+        padding: 6rem 0;
+        transition: .2s;
+    }
+    .navs.active{
+        right: 0;
+    }
+    .navs img{
+        display: initial;
+    }
+    .x{
+        display: initial;
+    }
+    header .navs a{
+        padding: 3rem 4rem;
+        margin: 0;
+        z-index: 300;
+    }
+    header .navs a span{
+        height: 100%;
+        border-radius: 0;
+        background: #1d2d5e;
+    }
+    header .navs a:hover span{
+        width: 100%;
+        z-index: -1;
+    }
+    
+    
+    .blog .container{
+        margin-top: 1rem;
+    }
+    .blog .container .holder{
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        padding: 0;
+    }
+    .blog .container .holder .image{
+        width: 100%;
+        height: 120px;
+    }
+    .blog .container .holder .image img{
+        display: none;
+    }
+}
+
+@media (max-width: 780px){
+    section{
+        padding: 4.5rem 0.4rem;
+    }
+    .join .container{
+        grid-template-columns: 1fr;
+        padding: 0.2rem;
+    }
+    .join .container .text h1{
+        font-size: 2.7rem;
+    }
+
+    .about .container .image{
+        width: 100%;
+        height: 50vw;
+        border-radius: 0;
+    }
+    .faqs .container{
+        grid-template-columns: 1fr;
+    }
+
+    
+    
+    
+    .blog .container{
+        margin-top: 1.6rem;
+    }
+
+    .contact .founders{
+        grid-template-columns: repeat(2, 1fr);
+        border: none;
+        padding: 0;
+    }
+    .contact .founders .found{
+        height: 40vw;
+    }
+
+    .footer .holder{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/*phone*/
+@media (max-width: 450px) {
+    .frequently{
+        height: 130px;
+    }
+    section{
+        padding: 4rem 0.2rem;
+    }
+    header{
+        padding: 1rem 0.3rem;
+    }
+    header .logo img{
+        height: 30px;
+    }
+    .btn{
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    .none{
+        display: none;
+    }
+    html{
+        font-size: 75%;
+    }
+
+    
+    .about .container .image{
+        width: 100%;
+        height: 50vw;
+        border-radius: 0;
+    }
+    
+    .join .container .text h1{
+        font-size: 2rem;
+    }
+    .join .container .text .icons ion-icon{
+        font-size: 1.7rem;
+    }
+    .join .container form .inputs{
+        grid-template-columns: 1fr;
+    }
+    .twoo{
+        display: initial;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faqs .container .image .ask form textarea{
+        height: 100px;
+        resize: vertical;
+    }
+
+    .blog .container{
+        margin-top: 0.6rem;
+    }
+    
+    .blog .container .holder .text h1{
+        margin-top: 0;
+    }
+    .blog .container .holder .text p{
+        margin-top: 0.2rem;
+    }
+    .blog .container .holder .text h2{
+        width: 100%;
+        margin-top: 0.2rem;
+    }
+
+    .contact .container{
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+    .contact .container .one a{
+        margin-left: 1.5rem;
+        font-size: 1.1rem;
+    }
+    .contact .founders{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.4rem;
+        padding: 0.2rem;
+        border: 1px solid transparent;
+    }
+    .contact .founders .found{
+        height: 40vw;
+    }
+
+    .footer .logo img{
+        width: 120px;
+    }
+    .footer .holder{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
